@@ -30,14 +30,14 @@ class Player(GameSprite):
         if keys[K_w] and self.rect.y > 5:
             self.rect.y -= self.speed
         if keys[K_s] and self.rect.y < win_height - 80:
-            self.rect.y -= self.speed
+            self.rect.y += self.speed
 
     def update_r(self):
         keys = key.get_pressed()
         if keys[K_UP] and self.rect.y > 5:
             self.rect.y -= self.speed
         if keys[K_DOWN] and self.rect.y < win_height - 80:
-            self.rect.y -= self.speed
+            self.rect.y += self.speed
 
 back = (235, 103, 52)
 win_height = 500
@@ -50,8 +50,9 @@ clock = time.Clock()
 fps = 120
 
 
-racket1 = Player('racket.png',)
-racket2 = Player('racket.png',)
+racket1 = Player('racket.png',30, 200, 4, 50, 150)
+racket2 = Player('racket.png',520, 200, 4, 50, 150)
+ball = GameSprite('tenis_ball.png, 200, 200, 4, 50, 500)
 
 
 
